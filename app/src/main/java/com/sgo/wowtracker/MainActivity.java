@@ -49,12 +49,10 @@ class Content extends AsyncTask<Void, Void, Void> {
             String data;
             for (int i = 0; i < info.size(); i++) {
                 if(info.eq(i).html().contains("WH.Assaults.addDisplay")){
-                    Log.d("info2",info.eq(i).html());
                     data = info.eq(i).html();
                     data = data.replace("WH.Assaults.addDisplay(\"US\", ","");
                     data = data.replace("WH.Assaults.addDisplay(\"EU\", ","");
                     data = data.replace(");","");
-                    Log.d("info3",data);
                     JSONObject finalData = new JSONObject(data);
                     Log.d("info4",finalData.getString("upcoming"));
                 };
